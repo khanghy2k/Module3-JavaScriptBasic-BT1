@@ -5,13 +5,34 @@
     <title>Title</title>
 </head>
 <body>
+<label>Điểm Vật Lý</label>
+<input type="text" id="VL">
+<label>Điểm Hóa Học</label>
+<input type="text" id="HH">
+<label>Điểm Sinh Học</label>
+<input type="text" id="SH">
+<button onclick="tongdiemvaavg()">Điểm</button>
+<h1 id="tongdiem"></h1>
+<h1 id="avg"></h1>
 <script>
-    let VL = parseFloat(prompt("Enter the first number:"));
-    let HH = parseFloat(prompt("Enter the second number:"));
-    let SH = parseFloat(prompt("Enter the third number:"));
-    let sum=(VL+HH+SH);
-    let average = sum / 3;
-    console.log(`The average and sum of ${VL}, ${HH}, and ${SH} is ${sum} is ${average} `);
+    // let VL = parseFloat(prompt("Enter the first number:"));
+    // let HH = parseFloat(prompt("Enter the second number:"));
+    // let SH = parseFloat(prompt("Enter the third number:"));
+    // let sum=(VL+HH+SH);
+    // let average = sum / 3;
+    // console.log(`The average and sum of ${VL}, ${HH}, and ${SH} is ${sum} is ${average} `);
+    function tongdiemvaavg() {
+        let VL=+document.getElementById('VL').value;
+        let HH=+document.getElementById('HH').value;
+        let SH=+document.getElementById('SH').value;
+        let sum=(VL+HH+SH);
+        console.log('Tong Diem',sum)
+        document.getElementById('tongdiem').innerHTML ='Tổng Điểm '+ sum;
+        let average = sum / 3;
+        console.log('Avg',average)
+        document.getElementById('avg').innerHTML='Điểm Trung Bình '+ average;
+
+    }
 </script>
 </body>
 </html>
